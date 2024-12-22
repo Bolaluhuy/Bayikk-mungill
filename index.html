@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Little Baby</title>
+    <!-- Link ke Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJtY0Ru+8C6kE0Y4PIRv5e6jd5mfHnU4q66y5RgyjTshZT9KlF4Q6EReFlbo" crossorigin="anonymous">
+    <!-- Link ke Google Fonts untuk font lebih modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0b3c1, #ff8b8b);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .message {
+            font-size: 32px;
+            color: #ff4081;
+            font-weight: 600;
+            margin-top: 30px;
+            padding: 25px 40px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-20px);
+            animation: fadeInOut 4s ease-in-out infinite;
+        }
+
+        .message:hover {
+            transform: translateY(-30px);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .btn {
+            font-size: 18px;
+            font-weight: 600;
+            background: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 25px;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ff66b2;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi, sayang!</h1>
+        <div class="message" id="romanticMessage"></div>
+    </div>
+
+    <!-- Link ke Bootstrap JS (opsional) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybR6Rj9f69U2UtVCOeDF6JNrkRRXxX2Ybs7ZjR4y5mKzLt7OG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0g4ptuF2P7t5c9WYm6g26OH3F5A7t8KlY6k5yKU39c41jGd7" crossorigin="anonymous"></script>
+
+    <script>
+        const messages = [
+            "Aku sayang banget sama kamu.",
+            "Maafin aku ya kalo sering marahin kamu.",
+            "Jangan marahan lagi yaa.",
+            "Aku kangenn banget sama kamu.",
+            "Gada yang lebih indah selain saat kita bersama tauk.",
+            "I Love Youu Sayang",
+            "Kamu cantik, gemoy, imut, sayangnya aku"
+        ];
+
+        let currentMessageIndex = 0;
+
+        function showMessage() {
+            const messageElement = document.getElementById("romanticMessage");
+            messageElement.innerHTML = messages[currentMessageIndex];
+            
+            // Update index untuk pesan berikutnya
+            currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+        }
+
+        // Menampilkan pesan pertama kali saat halaman dimuat
+        showMessage();
+
+        // Ganti pesan setiap 4 detik (4000 ms)
+        setInterval(showMessage, 4000);
+    </script>
+</body>
+</html>
